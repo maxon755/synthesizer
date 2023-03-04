@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.openjfx.synthesizer.Note;
 import org.openjfx.synthesizer.Synthesizer;
 
 /**
@@ -24,7 +25,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        synthesizer.playNote();
+        synthesizer.playNote(Note.D);
     }
 
     public static void main(String[] args) {

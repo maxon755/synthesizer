@@ -25,8 +25,8 @@ public class Synthesizer {
         }
     }
 
-    public void playNote() {
-        midiChannel.noteOn(60, 80);
+    public void playNote(Note note) {
+        midiChannel.noteOn(note.synthCode, 80);
     }
 
     public Instrument[] getInstruments() {
