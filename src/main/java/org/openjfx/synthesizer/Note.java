@@ -14,7 +14,7 @@ public enum Note {
     B("B",70),
     H("H", 71),
     C2("C2", 72);
-    
+
     final String name;
 
     final int synthCode;
@@ -22,5 +22,9 @@ public enum Note {
     Note(String name, int synthCode) {
         this.name = name;
         this.synthCode = synthCode;
+    }
+
+    public String getName() {
+        return name;
     }
 }
