@@ -82,7 +82,7 @@ public class PianoKeyboardFactory {
             rectangle.setStroke(Color.BLACK);
             rectangle.setStrokeWidth(2.5);
 
-            getChildren().addAll(rectangle, new Text(note.getName() + '\n' + keyCode.name()));
+            getChildren().addAll(rectangle, new Text(keyCode.name()));
         }
 
         @Override
@@ -114,7 +114,7 @@ public class PianoKeyboardFactory {
             rectangle.setStrokeWidth(2.5);
 
             Text name = new Text();
-            name.setText(note.getName() + '\n' + keyCode.name());
+            name.setText(keyCode.name());
             name.setFill(Color.WHITE);
 
             getChildren().addAll(rectangle, name);
