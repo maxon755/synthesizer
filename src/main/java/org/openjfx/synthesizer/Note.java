@@ -1,6 +1,9 @@
 package org.openjfx.synthesizer;
 
 public enum Note {
+    A0("A0", 57),
+    B0("B0", 58),
+    H0("H0", 59),
     C("C", 60),
     Cd("C#", 61),
     D("D", 62),
@@ -13,7 +16,11 @@ public enum Note {
     A("A", 69),
     B("B",70),
     H("H", 71),
-    C2("C2", 72);
+    C2("C2", 72),
+    Cd2("CD2", 73),
+    D2("D2", 74),
+    Eb2("Eb2", 75),
+    E2("E2", 76);
 
     final String name;
 

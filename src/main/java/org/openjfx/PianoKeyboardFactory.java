@@ -23,12 +23,16 @@ public class PianoKeyboardFactory {
         addKey(pianoKeyboard, new WhiteKey(Note.A, KeyCode.H), 500);
         addKey(pianoKeyboard, new WhiteKey(Note.H, KeyCode.J), 600);
         addKey(pianoKeyboard, new WhiteKey(Note.C2, KeyCode.K), 700);
+        addKey(pianoKeyboard, new WhiteKey(Note.D2, KeyCode.L), 800);
+        addKey(pianoKeyboard, new WhiteKey(Note.E2, KeyCode.SEMICOLON), 900);
 
         addKey(pianoKeyboard, new BlackKey(Note.Cd, KeyCode.W), 75);
         addKey(pianoKeyboard, new BlackKey(Note.Eb, KeyCode.E), 175);
         addKey(pianoKeyboard, new BlackKey(Note.Fd, KeyCode.T), 375);
         addKey(pianoKeyboard, new BlackKey(Note.Gd, KeyCode.Y), 475);
         addKey(pianoKeyboard, new BlackKey(Note.B, KeyCode.U), 575);
+        addKey(pianoKeyboard, new BlackKey(Note.Cd2, KeyCode.O), 775);
+        addKey(pianoKeyboard, new BlackKey(Note.Eb2, KeyCode.P), 875);
 
 
         return pianoKeyboard;
