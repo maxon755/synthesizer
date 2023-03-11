@@ -58,7 +58,9 @@ public class PianoKeyboardFactory {
 
         abstract void createShape();
 
-        public abstract void configureTransition();
+        public abstract void drawKeyPressed();
+
+        public abstract void drawKeyReleased();
 
         public Note getNote() {
             return note;
@@ -90,15 +92,24 @@ public class PianoKeyboardFactory {
         }
 
         @Override
-        public void configureTransition() {
+        public void drawKeyPressed() {
             FillTransition transition = new FillTransition(
                     Duration.seconds(0.15),
                     rectangle,
                     Color.WHITE,
                     Color.BISQUE
             );
-            transition.setCycleCount(2);
-            transition.setAutoReverse(true);
+            transition.play();
+        }
+
+        @Override
+        public void drawKeyReleased() {
+            FillTransition transition = new FillTransition(
+                    Duration.seconds(0.15),
+                    rectangle,
+                    Color.BISQUE,
+                    Color.WHITE
+            );
             transition.play();
         }
     }
@@ -125,15 +136,24 @@ public class PianoKeyboardFactory {
         }
 
         @Override
-        public void configureTransition() {
+        public void drawKeyPressed() {
             FillTransition transition = new FillTransition(
                     Duration.seconds(0.15),
                     rectangle,
                     Color.BLACK,
                     Color.GRAY
             );
-            transition.setCycleCount(2);
-            transition.setAutoReverse(true);
+            transition.play();
+        }
+
+        @Override
+        public void drawKeyReleased() {
+            FillTransition transition = new FillTransition(
+                    Duration.seconds(0.15),
+                    rectangle,
+                    Color.GRAY,
+                    Color.BLACK
+            );
             transition.play();
         }
     }

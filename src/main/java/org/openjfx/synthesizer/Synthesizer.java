@@ -32,6 +32,10 @@ public class Synthesizer {
         midiChannel.noteOn(note.synthCode, 80);
     }
 
+    public void stopNote(Note note) {
+        midiChannel.noteOff(note.synthCode);
+    }
+
     public Instrument[] getInstruments() {
         return synthesizer.getLoadedInstruments();
     }

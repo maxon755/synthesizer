@@ -1,9 +1,6 @@
 package org.openjfx.synthesizer;
 
 public enum Note {
-    A0("A0", 57),
-    B0("B0", 58),
-    H0("H0", 59),
     C("C", 60),
     Cd("C#", 61),
     D("D", 62),
