@@ -10,32 +10,28 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.openjfx.synthesizer.Synthesizer;
-
 import javax.sound.midi.SoundbankResource;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
+
+    ArrayList<KeyCode> pressedKeys = new ArrayList<>();
 
     @Override
     public void start(Stage stage) {
 
         Synthesizer synthesizer = new Synthesizer();
-
         Pane pianoKeyboard = PianoKeyboardFactory.createPianoKeyboard();
-
-        var scene = new Scene(new VBox(
-                createInstrumentSelector(synthesizer),
-                pianoKeyboard
-        ));
+        Scene scene = new Scene(new VBox(createInstrumentSelector(synthesizer), pianoKeyboard));
+        setKeyHandlers(scene, pianoKeyboard, synthesizer);
 
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
 
-        ArrayList<KeyCode> pressedKeys = new ArrayList<>();
-
+    void setKeyHandlers(Scene scene, Pane pianoKeyboard, Synthesizer synthesizer) {
         scene.setOnKeyPressed(keyEvent -> {
             if (pressedKeys.contains(keyEvent.getCode())) {
                 return;
@@ -65,9 +61,6 @@ public class App extends Application {
                         pianoKey.drawKeyReleased();
                     });
         });
-
-        stage.setResizable(false);
-        stage.show();
     }
 
     ComboBox<String> createInstrumentSelector(Synthesizer synthesizer) {
