@@ -27,8 +27,4 @@ public enum Note {
         this.name = name;
         this.synthCode = synthCode;
     }
-
-    public String getName() {
-        return name;
-    }
 }

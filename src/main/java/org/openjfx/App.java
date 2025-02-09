@@ -20,7 +20,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-
         Synthesizer synthesizer = new Synthesizer();
         Pane pianoKeyboard = PianoKeyboardFactory.createPianoKeyboard();
         Scene scene = new Scene(new VBox(createInstrumentSelector(synthesizer), pianoKeyboard));
